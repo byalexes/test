@@ -16,9 +16,9 @@ $words = array_flip($words);
 
 for ($i = 0; $i<5; $i++) {
     $randomWords = array_rand($words, 5);
-    foreach ($randomWords as $key) {
-        $color = color($words, $key);
-        echo "<font color=\"$color\"> $key</font>";
+    foreach ($randomWords as $value) {
+        $color = color($words, $value);
+        echo "<font color=\"$color\"> $value</font>";
     }
     echo "<br />";
 }
