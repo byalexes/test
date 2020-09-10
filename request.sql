@@ -1,0 +1,1 @@
+SELECT id, fullname, ((SELECT IFNULL(SUM(amount),0) FROM transactions WHERE to_person_id = persons.id ) - (SELECT IFNULL(SUM(amount),0) FROM transactions WHERE from_person_id=persons.id))+100 AS theSum FROM persons;
