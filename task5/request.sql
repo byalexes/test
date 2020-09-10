@@ -1,1 +1,2 @@
 SELECT id, fullname, ((SELECT IFNULL(SUM(amount),0) FROM transactions WHERE to_person_id = persons.id ) - (SELECT IFNULL(SUM(amount),0) FROM transactions WHERE from_person_id=persons.id))+100 AS theSum FROM persons;
+SELECT transactions.from_person_id, (SELECT persons.city_id FROM persons WHERE persons.id = from_person_id) as cityid, (SELECT cities.name FROM cities WHERE cities.id = cityid) as CityName FROM transactions
