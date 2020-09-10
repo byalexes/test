@@ -9,7 +9,10 @@ foreach ($arData as $value)
     if ($value == "$intValue") $arInt[] = $value;
 }
 
-$res = array_unique($arInt);
-sort($res);
-$res = implode(" ", $res);
-echo $res;
+if ($arInt)
+{
+    $res = array_unique($arInt);
+    sort($res);
+    $res = implode(" ", $res);
+    echo $res;
+}
